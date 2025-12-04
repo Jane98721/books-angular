@@ -64,7 +64,7 @@ export class Login {
         Username: this.registerForm.value.username,
         Password: this.registerForm.value.password
       }
-    console.log('Register payload:', payload);
+    console.log('Register payload:', payload.Username);
 
     this.userService.registerUser(payload).subscribe({
       next: () => {
