@@ -5,18 +5,31 @@ import { RouterOutlet } from '@angular/router';
   selector: 'app-root',
   imports: [RouterOutlet],
   templateUrl: './app.html',
-  styleUrl: './app.css'
+  styleUrls: ['./app.css']
 })
-export class App {
-
-  currentTheme: 'light' | 'dark' = 'light'
+export class App { 
+  
+  ngOnInit(){
+  const savedTheme = localStorage.getItem("data-bs-theme") || 'light';
+  document.documentElement.setAttribute("data-bs-theme", savedTheme)
+  }
 
   toggle(){
-    this.currentTheme =
-    this.currentTheme === 'light' ? 'dark' : 'light'
+    const currentTheme =  document.documentElement.getAttribute('data-bs-theme') || 'light';
+    
+    const next = currentTheme === 'dark' ? 'light':'dark';
 
-    document.documentElement.setAttribute('data-bs-theme', this.currentTheme)
-   
+    document.documentElement.setAttribute('data-bs-theme',next)
+
+    localStorage.setItem('theme', next)
+
+    
   }
+
   protected readonly title = signal('projekt');
 }
+
+
+  
+
+
