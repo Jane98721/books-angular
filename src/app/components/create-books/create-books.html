@@ -1,0 +1,31 @@
+<div class="d-flex flex-column align-items-center mt-5 row" style="max-width: 100%;">
+  <div class ="border border-3 d-flex flex-column align-items-center col-7 col-md-4" style="height:70vh">
+    <h2 class="mt-5">{{editMode ? 'Uppdatera bok' : 'Skapa ny bok'}}</h2>
+  
+    <form>
+      <div class="pt-2">
+        <input type="text" id="titel" [(ngModel)] = "newTitle" name="newTitle" class="form-control" 
+        required
+        placeholder="Titel">
+      </div>
+      
+      <div class="pt-2">
+        <input type="text" id="author" [(ngModel)] = "newAuthor" name="newAuthor" class="form-control" 
+        required
+        placeholder="Författare">
+      </div>
+      
+      <div class="pt-2">
+        <input type="text" id="published" [(ngModel)] = "newPublished" name="newPublished" 
+        class="form-control" required
+        placeholder="Publiceringsår">
+      </div>
+      
+      <div class="mx-auto d-grid pt-4"> 
+        <button (click)="saveBook()" type="button" class="btn btn-primary mx-auto">
+        {{editMode ? 'Spara ändringar ' : 'Spara bok'}} <i class="fa-regular fa-floppy-disk"> 
+           </i></button>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,18 @@
+<nav class="navbar navbar-expand-sm bg-dark border border-3">
+  <div class="container-fluid d-flex flex-column flex-md-row align-items-start align-items-md-center">
+
+    <div class="d-flex flex-column flex-md-row gap-3">
+     
+        <a class="nav-link text-white" routerLink="books">Böcker <i class="fa-solid fa-book"></i></a>
+      
+        <a class="nav-link text-white" routerLink="quotes">Citater <i class="fa-solid fa-quote-left">
+
+        </i></a>
+      </div>   
+
+    <button (click) ="logOut()" class ="btn btn-danger mt-3">Logga ut 
+      <i class="fa-solid fa-arrow-right-from-bracket"></i>
+    </button>
+  </div>
+</nav>
+<router-outlet></router-outlet> 

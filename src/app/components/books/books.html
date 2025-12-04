@@ -1,0 +1,24 @@
+<div class="container p-5 my-5 border border-3 d-flex flex-column ">
+  
+  <h2>Alla böcker</h2>
+
+  <div>
+    <ul>
+      <li *ngFor="let book of books" class="">
+       <p><strong>Titel: </strong> {{book.title}}<p></p>
+       <p><strong>Författare: </strong>{{ book.author}}</p>
+       <p><strong>Publicerad år: </strong>{{book.publishedYear}}</p>
+       <button (click) = "editBook(book.id)" class="btn btn-warning mx-2">Ändra 
+        <i class="fa-solid fa-pen-to-square"></i>
+      </button>
+       <button (click) = "deleteBook(book.id)" class=" btn btn-danger">Ta bort 
+        <i class="fa-solid fa-delete-left"></i>
+      </button> 
+       <hr>
+    </li>
+    </ul>
+  </div>
+  
+  <button (click) = "createBook()"class ="mt-4 btn btn-primary">Skapa ny bok</button>
+ 
+</div>
